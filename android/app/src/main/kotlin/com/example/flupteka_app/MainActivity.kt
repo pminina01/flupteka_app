@@ -1,0 +1,6 @@
+package com.example.flupteka_app
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
