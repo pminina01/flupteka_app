@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './aid-kit/page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'navigation.dart' as Navigation;
 
 void main() {
@@ -71,6 +73,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  void initFirebase() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+  }
+  //TODO: Куда то пихнуть метод initFirebase() нужно
+  @override
+  void initState(){
+    super.initState();
+
+    initFirebase();
+  }
 
   void _incrementCounter() {
     setState(() {

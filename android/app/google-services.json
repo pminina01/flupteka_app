@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "906290695113",
+    "project_id": "flupteka",
+    "storage_bucket": "flupteka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906290695113:android:87d801b8eae292b2b43618",
+        "android_client_info": {
+          "package_name": "com.example.flupteka_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906290695113-d5umur2vo87sqiv5aa9g778chdk9c9kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuWVGVrRrSLuE-dXt63JFU6dwFH4pcnOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906290695113-d5umur2vo87sqiv5aa9g778chdk9c9kh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
