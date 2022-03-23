@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './medicament.dart';
+import '../navigation.dart' as Navigation;
 
 class AidKitPage extends StatelessWidget {
   const AidKitPage({Key? key}) : super(key: key);
@@ -17,8 +18,13 @@ class AidKitPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
-        tooltip: 'Increment',
+        onPressed: () => {
+          Navigator.pushNamed(
+            context,
+            Navigation.ADD_MEDICINE,
+          )
+        },
+        tooltip: 'Add medicine',
         child: const Icon(Icons.add),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './aid-kit/page.dart';
+import 'aid-kit/aid-kit-page.dart';
 import 'navigation.dart' as Navigation;
 
 void main() {
