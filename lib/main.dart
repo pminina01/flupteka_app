@@ -119,7 +119,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {Navigator.pushNamed(context, Navigation.AID_KIT)},
+        onPressed: (){
+          FirebaseFirestore.instance.collection('Test').add({'item': 'Hello World'});
+
+          Navigator.pushNamed(context, Navigation.AID_KIT);
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
