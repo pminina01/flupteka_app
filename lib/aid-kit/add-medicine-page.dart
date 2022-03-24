@@ -8,27 +8,32 @@ class AddMedicinePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
           children: [
-            Row(children: const [
-              Text(
+            Row(mainAxisSize: MainAxisSize.min, children: [
+              const Text(
                 "Name",
                 style: TextStyle(
                   fontFamily: "Poppins",
                   fontSize: 30,
                 ),
               ),
-              // TextField(
-              //   decoration: const InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     hintText: 'Aspirin',
-              //     constraints: BoxConstraints(minWidth: 400, minHeight: 60),
-              //   ),
-              //   onSubmitted: (value) {},
-              // ),
+              SizedBox(
+                width: 200,
+                height: 60,
+                child: TextField(
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Aspirin',
+                    constraints: BoxConstraints(maxWidth: 200, maxHeight: 60),
+                  ),
+                  onSubmitted: (value) {},
+                ),
+              ),
             ]),
-            Row(children: [
+            Row(mainAxisSize: MainAxisSize.min, children: [
               const Text(
                 "Count",
                 style: TextStyle(
@@ -49,18 +54,25 @@ class AddMedicinePage extends StatelessWidget {
                 child: const Icon(Icons.add),
               ),
             ]),
+            Row(mainAxisSize: MainAxisSize.min, children: [
+              const Text(
+                "Due",
+                style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontSize: 30,
+                ),
+              ),
+              TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Aspirin',
+                  constraints: BoxConstraints(maxWidth: 200, maxHeight: 60),
+                ),
+                onSubmitted: (value) {},
+              ),
+            ]),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-          Navigator.pushNamed(
-            context,
-            Navigation.ADD_MEDICINE,
-          )
-        },
-        tooltip: 'Add medicine',
-        child: const Icon(Icons.add),
       ),
     );
   }
