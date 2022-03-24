@@ -23,11 +23,11 @@ about the time of taking the pills and running out medicines.
 
 # Description of each page
 
-Contacts Page (Main Page now):
+**Contacts Page (Main Page now):**
 
 ● list of creators with clickable link to their telegram
 
-First-ait kit:
+**First-ait kit:**
 
 ● list of defined medicine
 
@@ -35,11 +35,12 @@ First-ait kit:
 
 ● add button that leads to Add Medicine Page
 
-Add Medicine Page
+**Add Medicine Page**
 
 ● clickable field for entering the data
 
-App-bar Menu:
+**App-bar Menu:**
+
 ● list of clickable pages
 
 # App description
