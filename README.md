@@ -4,8 +4,8 @@ Flupteka is a personal first-aid kit application for tracking the available medi
 the user's personal first-aid kit. App can track the number of remaining pills, notify
 about the time of taking the pills and running out medicines.
 
-# Features  
-Search: 
+# Features   
+Search:  
 ● As a user, I want to search for medicines to add to the first aid kit.  
 ● As a user, I want to search for medicines in my first aid kit to monitor the availability
 of medicines.    
