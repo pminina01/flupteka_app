@@ -25,7 +25,12 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                   ? const Icon(Icons.menu)
                   : const Icon(Icons.arrow_back_ios_new)),
           Text(title),
-          onExtraAction != null ? Icon(Icons.add) : SizedBox(width: 20),
+          onExtraAction != null
+              ? IconButton(
+                  onPressed: onExtraAction,
+                  icon: Icon(Icons.add),
+                )
+              : const SizedBox(width: 20),
         ],
       ),
     );
