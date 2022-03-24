@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './aid-kit/page.dart';
 import 'navigation.dart' as Navigation;
 
 class HamburgerMenu extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './aid-kit/page.dart';
+import 'aid-kit/aid-kit-page.dart';
+import 'aid-kit/add-medicine-page.dart';
 import './contacts.dart';
 import 'navigation.dart' as Navigation;
 import './menu.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: true,
           //leading: IconButton(icon:Icon(Icons.arrow_back),
-            //onPressed:() => Navigator.pop(context, false),
+          //onPressed:() => Navigator.pop(context, false),
           //),
           elevation: 0.0,
           iconTheme: IconThemeData(
@@ -64,15 +65,11 @@ class MyApp extends StatelessWidget {
         }
         if (settings.name == Navigation.ADD_MEDICINE) {
           return MaterialPageRoute(
-            builder: (context) => const MyHomePage(
-              title: "Add medicine",
-            ),
+            builder: (context) => const AddMedicinePage(),
           );
         }
         if (settings.name == Navigation.CONTACTS) {
-          return MaterialPageRoute(
-            builder: (context) => Contacts()
-          );
+          return MaterialPageRoute(builder: (context) => Contacts());
         }
         return null;
       },
