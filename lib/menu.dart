@@ -7,7 +7,7 @@ class HamburgerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Color(0xFF55AA96),
+      backgroundColor: const Color(0xFF55AA96),
       child: ListView(
         children: <Widget>[
           const DrawerHeader(
@@ -27,20 +27,20 @@ class HamburgerMenu extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () => Navigator.pushNamed(context, Navigation.AID_KIT)),
-          new ListTile(
-              title: new Text(
+          ListTile(
+              title: const Text(
                 "Notifications",
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {}),
-          new ListTile(
-              title: new Text(
+          ListTile(
+              title: const Text(
                 "Settings",
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {}),
-          new ListTile(
-              title: new Text(
+          ListTile(
+              title: const Text(
                 "Contacts",
                 style: TextStyle(color: Colors.white),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../navigation.dart' as Navigation;
+import 'package:flupteka_app/header.dart';
 
 class AddMedicinePage extends StatelessWidget {
   const AddMedicinePage({Key? key}) : super(key: key);
@@ -7,6 +8,10 @@ class AddMedicinePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const Header(
+        hasMenu: false,
+        title: "Add medicine",
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(

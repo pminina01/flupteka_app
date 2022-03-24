@@ -3,7 +3,6 @@ import 'aid-kit/aid-kit-page.dart';
 import 'aid-kit/add-medicine-page.dart';
 import './contacts.dart';
 import 'navigation.dart' as Navigation;
-import './menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,27 +16,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-          //leading: IconButton(icon:Icon(Icons.arrow_back),
-          //onPressed:() => Navigator.pop(context, false),
-          //),
-          elevation: 0.0,
-          iconTheme: IconThemeData(
-            color: Colors.black, //change your color here
-            size: 30,
-          ),
-        ),
-        body: Contacts(),
-        drawer: HamburgerMenu(),
-      ),
+      home: const Contacts(),
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     automaticallyImplyLeading: true,
+      //     //leading: IconButton(icon:Icon(Icons.arrow_back),
+      //     //onPressed:() => Navigator.pop(context, false),
+      //     //),
+      //     elevation: 0.0,
+      //     iconTheme: const IconThemeData(
+      //       color: Colors.black, //change your color here
+      //       size: 30,
+      //     ),
+      //   ),
+      //   body: const Contacts(),
+      //   drawer: const HamburgerMenu(),
+      // ),
       theme: ThemeData(
-        primaryColor: Color(0xFFC5DADA),
-        backgroundColor: Color(0xFFC5DADA),
-        scaffoldBackgroundColor: Color(0xFFC5DADA),
+        primaryColor: const Color(0xFFC5DADA),
+        backgroundColor: const Color(0xFFC5DADA),
+        scaffoldBackgroundColor: const Color(0xFFC5DADA),
         fontFamily: 'Poppins',
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyText1: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.normal,
@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.normal,
           ),
         ),
-        appBarTheme: AppBarTheme(
-          color: const Color(0xFFC5DADA),
+        appBarTheme: const AppBarTheme(
+          color: Color(0xFFC5DADA),
         ),
       ),
       onUnknownRoute: (settings) => MaterialPageRoute(builder: (context) {
