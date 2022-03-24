@@ -24,20 +24,20 @@ class MyApp extends StatelessWidget {
           //onPressed:() => Navigator.pop(context, false),
           //),
           elevation: 0.0,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.black, //change your color here
             size: 30,
           ),
         ),
-        body: Contacts(),
-        drawer: HamburgerMenu(),
+        body: const Contacts(),
+        drawer: const HamburgerMenu(),
       ),
       theme: ThemeData(
-        primaryColor: Color(0xFFC5DADA),
-        backgroundColor: Color(0xFFC5DADA),
-        scaffoldBackgroundColor: Color(0xFFC5DADA),
+        primaryColor: const Color(0xFFC5DADA),
+        backgroundColor: const Color(0xFFC5DADA),
+        scaffoldBackgroundColor: const Color(0xFFC5DADA),
         fontFamily: 'Poppins',
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyText1: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.normal,
@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.normal,
           ),
         ),
-        appBarTheme: AppBarTheme(
-          color: const Color(0xFFC5DADA),
+        appBarTheme: const AppBarTheme(
+          color: Color(0xFFC5DADA),
         ),
       ),
       onUnknownRoute: (settings) => MaterialPageRoute(builder: (context) {
