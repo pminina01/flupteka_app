@@ -4,6 +4,9 @@ Flupteka is a personal first-aid kit application for tracking the available medi
 the user's personal first-aid kit. App can track the number of remaining pills, notify
 about the time of taking the pills and running out medicines.
 
+# How to biuld 
+\path\to\app\flupteka_app>flutter build apk
+
 # Features   
 Search:  
 ● As a user, I want to search for medicines to add to the first aid kit.  
