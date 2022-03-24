@@ -5,7 +5,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -73,29 +76,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late final db = FirebaseDatabase.instance.reference().child('medicine');
-  late DatabaseReference databaseReference;
-
-  showData() {
-    db.once().then((snapshot){
-      print(snapshot.value);
-    });
-  }
-
   int _counter = 0;
-
-  void initFirebase() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
-  }
 
   //TODO: Куда то пихнуть метод initFirebase() нужно
   @override
   void initState() {
     super.initState();
 
-    initFirebase();
-    showData()
   }
 
   void _incrementCounter() {
@@ -123,16 +110,33 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: ListView(
-          children: [Text("${_counter}")],
-        ),
+      body: StreamBuilder(
+        stream:
+            FirebaseFirestore.instance.collection('medicine').snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) return Text('Нет записей');
+          return ListView.builder(
+              itemCount: snapshot.data?.docs.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Dismissible(
+                  key: Key(snapshot.data!.docs[index].id),
+                  child: Card(
+                    child: ListTile(
+                        title: Text(snapshot.data!.docs[index].get('name')),
+                        trailing: IconButton(
+                            icon: const Icon(Icons.delete_sweep,
+                                color: Colors.deepOrangeAccent),
+                            onPressed: () {})),
+                  ),
+                );
+              });
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //FirebaseFirestore.instance.collection('Test').add({'item': 'Hello World'});
+          FirebaseFirestore.instance
+              .collection('Test')
+              .add({'item': 'Hello World'});
 
           Navigator.pushNamed(context, Navigation.AID_KIT);
         },
