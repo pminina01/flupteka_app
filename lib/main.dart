@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import './aid-kit/page.dart';
+import 'navigation.dart' as Navigation;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'navigation.dart' as Navigation;
+import 'package:firebase_database/firebase_database.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,18 +73,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late final db = FirebaseDatabase.instance.reference().child('medicine');
+  late DatabaseReference databaseReference;
+
+  showData() {
+    db.once().then((snapshot){
+      print(snapshot.value);
+    });
+  }
+
   int _counter = 0;
 
   void initFirebase() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
   }
+
   //TODO: Куда то пихнуть метод initFirebase() нужно
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
     initFirebase();
+    showData()
   }
 
   void _incrementCounter() {
@@ -115,12 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: ListView(
-          children: const [Text("Implement me, pls")],
+          children: [Text("${_counter}")],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          FirebaseFirestore.instance.collection('Test').add({'item': 'Hello World'});
+        onPressed: () {
+          //FirebaseFirestore.instance.collection('Test').add({'item': 'Hello World'});
 
           Navigator.pushNamed(context, Navigation.AID_KIT);
         },
