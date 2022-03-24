@@ -26,9 +26,11 @@ class _AidKitPageState extends State<AidKitPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Header(
+      appBar: Header(
         hasMenu: false,
         title: "Medications",
+        onExtraAction: () =>
+            Navigator.pushNamed(context, Navigation.ADD_MEDICINE),
       ),
       body: Center(
         child: ListView(
