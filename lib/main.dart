@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './aid-kit/page.dart';
+import 'aid-kit/aid-kit-page.dart';
+import 'aid-kit/add-medicine-page.dart';
 import './contacts.dart';
 import 'navigation.dart' as Navigation;
 
@@ -100,9 +101,7 @@ class MyApp extends StatelessWidget {
         }
         if (settings.name == Navigation.ADD_MEDICINE) {
           return MaterialPageRoute(
-            builder: (context) => const MyHomePage(
-              title: "Add medicine",
-            ),
+            builder: (context) => const AddMedicinePage(),
           );
         }
         return null;

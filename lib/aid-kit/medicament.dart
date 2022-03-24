@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 class Medicament extends StatelessWidget {
   final String name;
   final int count;
+  final void Function()? onRemove;
+  final void Function()? onAdd;
 
-  const Medicament({Key? key, required this.name, required this.count})
+  const Medicament(
+      {Key? key,
+      required this.name,
+      required this.count,
+      this.onAdd,
+      this.onRemove})
       : super(key: key);
 
   @override
@@ -13,7 +20,7 @@ class Medicament extends StatelessWidget {
     final countWidth = _textSize(
             "$count", const TextStyle(fontFamily: "Poppins", fontSize: 35))
         .width;
-    // To shift the count's center change the value of defaultPadding:
+    // To shift the count's center, change the value of defaultPadding:
     // decrease to the left, increase to the right
     const double defaultPadding = 40;
 
@@ -29,26 +36,16 @@ class Medicament extends StatelessWidget {
           Row(
             children: [
               TextButton(
-                onPressed: () {
-                  print("Minus");
-                },
-                child: const Text(
-                  "-",
-                  style: TextStyle(fontFamily: "Poppins"),
-                ),
+                onPressed: onRemove,
+                child: const Icon(Icons.remove),
               ),
               Text(
                 "$count",
                 style: const TextStyle(fontFamily: "Poppins", fontSize: 35),
               ),
               TextButton(
-                onPressed: () {
-                  print("Plus");
-                },
-                child: const Text(
-                  "+",
-                  style: TextStyle(fontFamily: "Poppins"),
-                ),
+                onPressed: onAdd,
+                child: const Icon(Icons.add),
               ),
             ],
           ),
