@@ -3,6 +3,7 @@ import 'aid-kit/aid-kit-page.dart';
 import 'aid-kit/add-medicine-page.dart';
 import './contacts.dart';
 import 'navigation.dart' as Navigation;
+import './menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: true,
+          //leading: IconButton(icon:Icon(Icons.arrow_back),
+          //onPressed:() => Navigator.pop(context, false),
+          //),
           elevation: 0.0,
           iconTheme: IconThemeData(
             color: Colors.black, //change your color here
@@ -25,48 +30,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Contacts(),
-        drawer: Drawer(
-          backgroundColor: Color(0xFF55AA96),
-          child: ListView(
-            children: <Widget>[
-              const DrawerHeader(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  "FLUPPTEKA",
-                  style: TextStyle(
-                      color: Color(0xFFFFFFFF),
-                      fontFamily: 'Poppins',
-                      fontSize: 38,
-                      letterSpacing: 6),
-                ),
-              ),
-              ListTile(
-                  title: const Text(
-                    "First-aid kit",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {}),
-              new ListTile(
-                  title: new Text(
-                    "Notifications",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {}),
-              new ListTile(
-                  title: new Text(
-                    "Settings",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {}),
-              new ListTile(
-                  title: new Text(
-                    "Contacts",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {}),
-            ],
-          ),
-        ),
+        drawer: HamburgerMenu(),
       ),
       theme: ThemeData(
         primaryColor: Color(0xFFC5DADA),
@@ -103,6 +67,9 @@ class MyApp extends StatelessWidget {
           return MaterialPageRoute(
             builder: (context) => const AddMedicinePage(),
           );
+        }
+        if (settings.name == Navigation.CONTACTS) {
+          return MaterialPageRoute(builder: (context) => Contacts());
         }
         return null;
       },
