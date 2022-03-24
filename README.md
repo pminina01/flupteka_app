@@ -8,23 +8,35 @@ about the time of taking the pills and running out medicines.
 \path\to\app\flupteka_app>flutter build apk
 
 # Features   
+
 ● count number of medicine
+
 ● enter data for adding medicine
+
 ● navigation through pages using beautiful app bar :)
+
 ● list of medicine in first-aid kit
+
 ● list of creators
+
 ● clickable links to creator's telegram
 
 # Description of each page
+
 Contacts Page (Main Page now):
+
 ● list of creators with clickable link to their telegram
 
 First-ait kit:
+
 ● list of defined medicine
+
 ● clickable counter for each medicine
+
 ● add button that leads to Add Medicine Page
 
 Add Medicine Page
+
 ● clickable field for entering the data
 
 App-bar Menu:
