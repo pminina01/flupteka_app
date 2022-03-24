@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './aid-kit/page.dart';
 import './contacts.dart';
 import 'navigation.dart' as Navigation;
+import './menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,17 +16,41 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: true,
+          //leading: IconButton(icon:Icon(Icons.arrow_back),
+            //onPressed:() => Navigator.pop(context, false),
+          //),
+          elevation: 0.0,
+          iconTheme: IconThemeData(
+            color: Colors.black, //change your color here
+            size: 30,
+          ),
+        ),
+        body: Contacts(),
+        drawer: HamburgerMenu(),
+      ),
       theme: ThemeData(
-        primaryColor: Color(0xFFDAF0F0),
-        backgroundColor: Color(0xFFDAF0F0),
+        primaryColor: Color(0xFFC5DADA),
+        backgroundColor: Color(0xFFC5DADA),
         scaffoldBackgroundColor: Color(0xFFC5DADA),
         fontFamily: 'Poppins',
         textTheme: TextTheme(
-          bodyText1: TextStyle(fontSize: 30),
-          bodyText2: TextStyle(fontSize: 28, letterSpacing: 6),
+          bodyText1: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.normal,
+          ),
+          bodyText2: TextStyle(
+            fontSize: 28,
+            letterSpacing: 6,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          color: const Color(0xFFC5DADA),
         ),
       ),
-      home: const Contacts(),
       onUnknownRoute: (settings) => MaterialPageRoute(builder: (context) {
         return const MyHomePage(
           title: "F",
@@ -42,6 +67,11 @@ class MyApp extends StatelessWidget {
             builder: (context) => const MyHomePage(
               title: "Add medicine",
             ),
+          );
+        }
+        if (settings.name == Navigation.CONTACTS) {
+          return MaterialPageRoute(
+            builder: (context) => Contacts()
           );
         }
         return null;
