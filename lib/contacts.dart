@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'navigation.dart' as Navigation;
+import 'header.dart';
 
 class Contacts extends StatelessWidget {
   const Contacts({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const Header(hasMenu: true, title: "Notifications"),
       body: Center(
         child: Align(
           alignment: Alignment.center,
@@ -37,11 +39,11 @@ class Contacts extends StatelessWidget {
       decoration: const BoxDecoration(
         border: Border(top: BorderSide(color: Colors.white)),
       ),
-      child: _content(name,alias),
+      child: _content(name, alias),
     );
   }
 
-  Widget _content(name,alias){
+  Widget _content(name, alias) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -51,6 +53,7 @@ class Contacts extends StatelessWidget {
       ],
     );
   }
+
   Widget _hyperLink(alias) {
     return InkWell(
       child: Text(
