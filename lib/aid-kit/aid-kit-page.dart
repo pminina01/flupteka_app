@@ -60,7 +60,7 @@ class _AidKitPageState extends State<AidKitPage> {
 }
 
 class Storage {
-  List<String> loadNames() => ["Paracetomol", "Aspirin", "Analgin"];
+  List<String> loadNames() => ["Otezla", "Aspirin", "Analgin"];
   List<int> loadQuantities() => [5, 50, 22];
 
   void storeNames(List<String> names) => {};
