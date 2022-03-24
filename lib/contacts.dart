@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'navigation.dart' as Navigation;
 import 'header.dart';
+import './menu.dart';
 
 class Contacts extends StatelessWidget {
   const Contacts({Key? key}) : super(key: key);
@@ -9,7 +10,10 @@ class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Header(hasMenu: true, title: "Notifications"),
+      appBar: const Header(
+        hasMenu: true,
+        title: "Contacts",
+      ),
       body: Center(
         child: Align(
           alignment: Alignment.center,
@@ -19,6 +23,7 @@ class Contacts extends StatelessWidget {
           ),
         ),
       ),
+      drawer: const HamburgerMenu(),
     );
   }
 

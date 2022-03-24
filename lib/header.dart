@@ -20,7 +20,9 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-              onPressed: () => {},
+              onPressed: hasMenu
+                  ? () => {Scaffold.of(context).openDrawer()}
+                  : () => Navigator.pop(context),
               icon: hasMenu
                   ? const Icon(Icons.menu)
                   : const Icon(Icons.arrow_back_ios_new)),
@@ -28,7 +30,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           onExtraAction != null
               ? IconButton(
                   onPressed: onExtraAction,
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                 )
               : const SizedBox(width: 20),
         ],

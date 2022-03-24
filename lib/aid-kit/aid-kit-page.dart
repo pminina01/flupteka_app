@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './medicament.dart';
 import '../navigation.dart' as Navigation;
+import 'package:flupteka_app/header.dart';
 
 class AidKitPage extends StatefulWidget {
   const AidKitPage({Key? key}) : super(key: key);
@@ -25,6 +26,10 @@ class _AidKitPageState extends State<AidKitPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const Header(
+        hasMenu: false,
+        title: "Medications",
+      ),
       body: Center(
         child: ListView(
           children: _medicineNames.asMap().entries.map((entry) {
@@ -38,22 +43,7 @@ class _AidKitPageState extends State<AidKitPage> {
               onRemove: () => setState(() => _medicineQuantities[ind] -= 1),
             );
           }).toList(),
-          // const [
-          // Medicament(name: "paracetomol", count: 5),
-          // Medicament(name: "Aboba", count: 228),
-          // Medicament(name: "Kek", count: 22),
-          // ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-          Navigator.pushNamed(
-            context,
-            Navigation.ADD_MEDICINE,
-          )
-        },
-        tooltip: 'Add medicine',
-        child: const Icon(Icons.add),
       ),
     );
   }

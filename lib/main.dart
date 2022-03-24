@@ -3,7 +3,6 @@ import 'aid-kit/aid-kit-page.dart';
 import 'aid-kit/add-medicine-page.dart';
 import './contacts.dart';
 import 'navigation.dart' as Navigation;
-import './menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,21 +16,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-          //leading: IconButton(icon:Icon(Icons.arrow_back),
-          //onPressed:() => Navigator.pop(context, false),
-          //),
-          elevation: 0.0,
-          iconTheme: const IconThemeData(
-            color: Colors.black, //change your color here
-            size: 30,
-          ),
-        ),
-        body: const Contacts(),
-        drawer: const HamburgerMenu(),
-      ),
+      home: const Contacts(),
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     automaticallyImplyLeading: true,
+      //     //leading: IconButton(icon:Icon(Icons.arrow_back),
+      //     //onPressed:() => Navigator.pop(context, false),
+      //     //),
+      //     elevation: 0.0,
+      //     iconTheme: const IconThemeData(
+      //       color: Colors.black, //change your color here
+      //       size: 30,
+      //     ),
+      //   ),
+      //   body: const Contacts(),
+      //   drawer: const HamburgerMenu(),
+      // ),
       theme: ThemeData(
         primaryColor: const Color(0xFFC5DADA),
         backgroundColor: const Color(0xFFC5DADA),
