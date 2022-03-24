@@ -15,17 +15,78 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
+          iconTheme: IconThemeData(
+            color: Colors.black, //change your color here
+            size: 30,
+          ),
+        ),
+        body: Contacts(),
+        drawer: Drawer(
+          backgroundColor: Color(0xFF55AA96),
+          child: ListView(
+            children: <Widget>[
+              const DrawerHeader(
+                padding: EdgeInsets.all(20.0),
+                child: Text(
+                  "FLUPPTEKA",
+                  style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                      fontFamily: 'Poppins',
+                      fontSize: 38,
+                      letterSpacing: 6),
+                ),
+              ),
+              ListTile(
+                  title: const Text(
+                    "First-aid kit",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {}),
+              new ListTile(
+                  title: new Text(
+                    "Notifications",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {}),
+              new ListTile(
+                  title: new Text(
+                    "Settings",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {}),
+              new ListTile(
+                  title: new Text(
+                    "Contacts",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {}),
+            ],
+          ),
+        ),
+      ),
       theme: ThemeData(
-        primaryColor: Color(0xFFDAF0F0),
-        backgroundColor: Color(0xFFDAF0F0),
+        primaryColor: Color(0xFFC5DADA),
+        backgroundColor: Color(0xFFC5DADA),
         scaffoldBackgroundColor: Color(0xFFC5DADA),
         fontFamily: 'Poppins',
         textTheme: TextTheme(
-          bodyText1: TextStyle(fontSize: 30),
-          bodyText2: TextStyle(fontSize: 28, letterSpacing: 6),
+          bodyText1: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.normal,
+          ),
+          bodyText2: TextStyle(
+            fontSize: 28,
+            letterSpacing: 6,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          color: const Color(0xFFC5DADA),
         ),
       ),
-      home: const Contacts(),
       onUnknownRoute: (settings) => MaterialPageRoute(builder: (context) {
         return const MyHomePage(
           title: "F",
