@@ -1,7 +1,7 @@
 import 'package:algolia/algolia.dart';
 import 'package:flutter/material.dart';
 import 'package:flupteka_app/header.dart';
-//import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 import '../algolia_application.dart';
 
 class AddMedicinePage extends StatefulWidget {
@@ -15,24 +15,6 @@ class _AddMedicinePage extends State<AddMedicinePage> {
   int _count = 0;
   //late DateTime _dateTime;
   final TextEditingController _searchText = TextEditingController(text: '');
-  // ignore: unused_field
-  List<AlgoliaObjectSnapshot> _results = [];
-  // ignore: unused_field
-  bool _searching = false;
-  final Algolia _algoliaApp = AlgoliaApplication.algolia;
-
-  _search() async {
-    setState(() {
-      _searching = true;
-    });
-    AlgoliaQuery query =
-        _algoliaApp.instance.index('medicine').query(_searchText.text);
-    AlgoliaQuerySnapshot querySnap = await query.getObjects();
-    _results = querySnap.hits;
-    setState(() {
-      _searching = false;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,57 +73,42 @@ class _AddMedicinePage extends State<AddMedicinePage> {
   }
 
   Widget _contentName() {
-    return Column(children: [
+    return
       Row(mainAxisSize: MainAxisSize.min, children: [
         const Text('Name'),
-        // TypeAheadField(
-        //   animationStart: 0,
-        //   animationDuration: Duration.zero,
-        //   textFieldConfiguration: const TextFieldConfiguration(
-        //       autofocus: true,
-        //       style: TextStyle(fontSize: 15),
-        //       decoration: InputDecoration(
-        //           border: OutlineInputBorder()
-        //       )
-        //   ),
-        //   suggestionsBoxDecoration: SuggestionsBoxDecoration(
-        //       color: Colors.lightBlue[50]
-        //   ),
-        //   suggestionsCallback: (pattern) {return [pattern,2,3];},
-        //   itemBuilder: (context, sone) {
-        //     return Card(
-        //         child: Container(
-        //           padding: EdgeInsets.all(10),
-        //           child:Text(sone.toString()),
-        //         )
-        //     );
-        //   },
-        //   onSuggestionSelected: (suggestion) {
-        //     print(suggestion);
-        //   },
-        // ),
         const Spacer(),
         SizedBox(
-          width: 200,
-          height: 60,
-          child: TextField(
-            controller: _searchText,
-            decoration: InputDecoration(
-              suffixIcon: IconButton(
-                onPressed: _search,
-                icon: const Icon(Icons.search),
-                iconSize: 30,
+        width: 190,
+        child:
+        TypeAheadField(
+          animationStart: 0,
+          animationDuration: Duration.zero,
+          textFieldConfiguration: TextFieldConfiguration(
+              autofocus: true,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  suffixIcon: Icon(Icons.search),
               ),
-              border: const OutlineInputBorder(),
-              hintText: 'Medicine Name',
-              contentPadding: const EdgeInsets.only(left: 20.0),
-              constraints: const BoxConstraints(maxWidth: 200, maxHeight: 60),
-            ),
-            onSubmitted: (value) {},
+            controller: _searchText,
           ),
+          suggestionsBoxDecoration: SuggestionsBoxDecoration(
+              color: Colors.lightBlue[50]
+          ),
+          suggestionsCallback: (pattern){
+            return _search(pattern);
+            },
+          itemBuilder: (context, String sone) {
+            return
+            ListTile(
+                title: Text(sone, style: const TextStyle(fontSize: 15)),
+            );
+          },
+          onSuggestionSelected: (suggestion) {
+            _searchText.text = suggestion.toString();
+          },
         ),
-      ])
-    ]);
+        ),
+      ]);
   }
 
   Widget _contentCount() {
@@ -176,4 +143,18 @@ class _AddMedicinePage extends State<AddMedicinePage> {
       ),
     ]);
   }
+}
+
+Future<List<String>> _search(text) async {
+  List<AlgoliaObjectSnapshot> _results = [];
+  List<String> _names = [];
+  final Algolia _algoliaApp = AlgoliaApplication.algolia;
+  AlgoliaQuery query = _algoliaApp.instance.index('medicine').query(text);
+  AlgoliaQuerySnapshot querySnap = await query.getObjects();
+  _results = querySnap.hits;
+  for (var i = 0; i < _results.length; i++){
+    var curr = _results[i].data['name'];
+    _names.add(curr);
+  }
+  return _names;
 }
