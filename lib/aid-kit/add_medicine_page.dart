@@ -148,7 +148,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
 Future<List<String>> _search(text) async {
   List<AlgoliaObjectSnapshot> _results = [];
   List<String> _names = [];
-  final Algolia _algoliaApp = AlgoliaApplication.algolia;
+  const Algolia _algoliaApp = AlgoliaApplication.algolia;
   AlgoliaQuery query = _algoliaApp.instance.index('medicine').query(text);
   AlgoliaQuerySnapshot querySnap = await query.getObjects();
   _results = querySnap.hits;

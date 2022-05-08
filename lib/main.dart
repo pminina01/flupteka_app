@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         }
         if (settings.name == navigation.notifications) {
           return MaterialPageRoute(
-            builder: (context) => Notifics(),
+            builder: (context) => const Notifics(),
           );
         }
 

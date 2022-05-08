@@ -35,7 +35,7 @@ class _HamburgerMenu extends State<HamburgerMenu>
             const DrawerHeader(
               padding: EdgeInsets.all(20.0),
               child: Text(
-                "FLUPTEKA",
+                'FLUPTEKA',
                 style: TextStyle(
                     color: Color(0xFFFFFFFF),
                     fontFamily: 'Poppins',
@@ -45,26 +45,26 @@ class _HamburgerMenu extends State<HamburgerMenu>
             ),
             ListTile(
                 title: const Text(
-                  "First-aid kit",
+                  'First-aid kit',
                   style: TextStyle(color: Colors.white),
                 ),
                 onTap: () => Navigator.pushNamed(context, navigation.aidKit)),
             ListTile(
                 title: const Text(
-                  "Notifications",
+                  'Notifications',
                   style: TextStyle(color: Colors.white),
                 ),
                 onTap: () =>
                     Navigator.pushNamed(context, navigation.notifications)),
             ListTile(
                 title: const Text(
-                  "Settings",
+                  'Settings',
                   style: TextStyle(color: Colors.white),
                 ),
                 onTap: () {}),
             ListTile(
                 title: const Text(
-                  "Contacts",
+                  'Contacts',
                   style: TextStyle(color: Colors.white),
                 ),
                 onTap: () => Navigator.pushNamed(context, navigation.contacts)),

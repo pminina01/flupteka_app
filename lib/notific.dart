@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'header.dart';
 import './menu.dart';
 // import './assets/images/clock.png';
 
 class Notifics extends StatefulWidget {
+  const Notifics({Key? key}) : super(key: key);
+
   @override
   _State createState() => _State();
 }
@@ -13,8 +14,8 @@ class _State extends State<Notifics> {
   final List<String> tablets = <String>[
     'Aspirin',
     'Paracetamol',
-    "Magnesium",
-    "Magnesium"
+    'Magnesium',
+    'Magnesium'
   ];
   final List<String> times = <String>['15:00', '20:00', '21:00', '22:00'];
   TextEditingController tabletController = TextEditingController();
@@ -32,7 +33,7 @@ class _State extends State<Notifics> {
     return Scaffold(
       appBar: const Header(
         hasMenu: true,
-        title: "Notifications",
+        title: 'Notifications',
       ),
       body: Center(
         child: Align(
@@ -40,32 +41,28 @@ class _State extends State<Notifics> {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(children: [
-              Container(
-                child: TextField(
-                  controller: tabletController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Tablet name',
-                  ),
+              TextField(
+                controller: tabletController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Tablet name',
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Container(
-                child: TextField(
-                  controller: timeController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Time in format HH:MM',
-                  ),
+              TextField(
+                controller: timeController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Time in format HH:MM',
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                child: Text('+'),
+              ElevatedButton(
+                child: const Text('+'),
                 onPressed: () {
                   addItemToList();
                 },
@@ -100,8 +97,8 @@ Widget _contentrow(time, name) {
   return Row(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Container(
-          width: 200,
+      SizedBox(
+          width: 150,
           child: Row(children: [
             Positioned.fill(
                 child: ClipRRect(
@@ -112,11 +109,10 @@ Widget _contentrow(time, name) {
                       height: 25,
                       width: 25,
                     ))),
-            SizedBox(width: 3),
+            const SizedBox(width: 3),
             Text(time),
           ])),
-      const SizedBox(width: 10),
-      Container(width: 300, child: Text(name)),
+      Expanded(child: SizedBox(width: 300, child: Text(name))),
     ],
   );
 }
