@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../navigation.dart' as Navigation;
 
 class AddMedicinePage extends StatelessWidget {
   const AddMedicinePage({Key? key}) : super(key: key);

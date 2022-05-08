@@ -1,4 +1,4 @@
-const String AID_KIT = "first_aid_kit";
-const String ADD_MEDICINE = "add_medicine";
-const String EDIT_MEDICINE = "edit_medicine";
-const String CONTACTS = "contacts";
+const String aidKit = "first_aid_kit";
+const String addMedicine = "add_medicine";
+const String editMedicine = "edit_medicine";
+const String contacts = "contacts";

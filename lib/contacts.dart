@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'navigation.dart' as Navigation;
 
 class Contacts extends StatelessWidget {
   const Contacts({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class Contacts extends StatelessWidget {
 
   Widget _rowOfContent(name, alias) {
     return Container(
-      padding: new EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       decoration: const BoxDecoration(
         border: Border(top: BorderSide(color: Colors.white)),
       ),
@@ -46,7 +45,7 @@ class Contacts extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(name),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         _hyperLink(alias),
       ],
     );
@@ -54,11 +53,11 @@ class Contacts extends StatelessWidget {
   Widget _hyperLink(alias) {
     return InkWell(
       child: Text(
-        '@${alias}',
+        '@$alias',
         style: const TextStyle(
             color: Color(0x8A000000), fontSize: 22, letterSpacing: 6),
       ),
-      onTap: () => launch('https://t.me/${alias}'),
+      onTap: () => launch('https://t.me/$alias'),
     );
   }
 }
