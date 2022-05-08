@@ -68,7 +68,7 @@ class AddMedicinePage extends StatelessWidget {
               TextField(
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Aspirin',
+                  hintText: '25.05',
                   constraints: BoxConstraints(maxWidth: 200, maxHeight: 60),
                 ),
                 onSubmitted: (value) {},

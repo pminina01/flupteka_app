@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'aid-kit/aid_kit_page.dart';
 import 'aid-kit/add_medicine_page.dart';
+import './notific.dart';
 import './contacts.dart';
 import 'navigation.dart' as navigation;
 
@@ -68,6 +69,12 @@ class MyApp extends StatelessWidget {
             builder: (context) => const AddMedicinePage(),
           );
         }
+        if (settings.name == navigation.notifications) {
+          return MaterialPageRoute(
+            builder: (context) => const Notifics(),
+          );
+        }
+
         if (settings.name == navigation.contacts) {
           return MaterialPageRoute(builder: (context) => const Contacts());
         }
