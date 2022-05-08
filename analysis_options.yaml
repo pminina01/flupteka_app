@@ -3,11 +3,13 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     prefer_single_quotes: error
-    missing_required_param: warning
+    missing_required_param: error
+    unused_import: info
+    avoid_print: warning
+    todo: ignore
 
 linter:
   rules:
     prefer_single_quotes: true
     annotate_overrides: true
     missing_required_param: true
-
