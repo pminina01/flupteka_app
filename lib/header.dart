@@ -24,7 +24,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                   ? () => {Scaffold.of(context).openDrawer()}
                   : () => Navigator.pop(context),
               icon: hasMenu
-                  ? const Icon(Icons.menu)
+                  ? const Icon(Icons.menu_rounded, size: 35,)
                   : const Icon(Icons.arrow_back_ios_new)),
           Text(title),
           onExtraAction != null

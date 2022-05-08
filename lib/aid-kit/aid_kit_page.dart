@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import './medicament.dart';
 import '../navigation.dart' as navigation;
+import 'package:flupteka_app/header.dart';
+import '../menu.dart';
 
 class AidKitPage extends StatefulWidget {
   const AidKitPage({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class AidKitPage extends StatefulWidget {
 class _AidKitPageState extends State<AidKitPage> {
   List<String> _medicineNames = [];
   List<int> _medicineQuantities = [];
+  late final int count;
 
   final Storage _storage = Storage();
 
@@ -25,44 +28,51 @@ class _AidKitPageState extends State<AidKitPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ListView(
-          children: _medicineNames.asMap().entries.map((entry) {
-            int ind = entry.key;
-            String name = entry.value;
+      appBar: const Header(
+        hasMenu: true,
+        title: 'List of medicine',
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: const Color(0xFF55AA96)),
+            onPressed: () => {
+              Navigator.pushNamed(
+                context,
+                navigation.addMedicine,
+              )
+            },
+            child: const Text('ADD NEW'),
+          ),
+          Expanded(
+            child: ListView(
+              children: _medicineNames.asMap().entries.map((entry) {
+                int ind = entry.key;
+                String name = entry.value;
 
-            return Medicament(
-              name: name,
-              count: _medicineQuantities[ind],
-              onAdd: () => setState(() => _medicineQuantities[ind] += 1),
-              onRemove: () => setState(() => _medicineQuantities[ind] -= 1),
-            );
-          }).toList(),
-          // const [
-          // Medicament(name: "paracetomol", count: 5),
-          // Medicament(name: "Aboba", count: 228),
-          // Medicament(name: "Kek", count: 22),
-          // ],
-        ),
+                return Medicament(
+                  name: name,
+                  count: _medicineQuantities[ind],
+                  onAdd: () => setState(() => _medicineQuantities[ind] += 1),
+                  onRemove: () => setState(() => _medicineQuantities[ind]==0 ? 0: _medicineQuantities[ind] -= 1),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {
-          Navigator.pushNamed(
-            context,
-            navigation.addMedicine,
-          )
-        },
-        tooltip: 'Add medicine',
-        child: const Icon(Icons.add),
-      ),
+      drawer: const HamburgerMenu(),
     );
   }
 }
 
 class Storage {
-  List<String> loadNames() => ["Otezla", "Aspirin", "Analgin"];
+  List<String> loadNames() => ['Otezla', 'Aspirin', 'Analgin'];
+
   List<int> loadQuantities() => [5, 50, 22];
 
   void storeNames(List<String> names) => {};
+
   void storeQuantities(List<int> names) => {};
 }
