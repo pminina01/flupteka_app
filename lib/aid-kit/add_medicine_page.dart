@@ -62,9 +62,9 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         _row('count'),
         _row('due'),
         ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: Color(0xFF55AA96)),
+          style: ElevatedButton.styleFrom(primary: const Color(0xFF55AA96)),
           onPressed: () {},
-          child: Text('ADD'),
+          child: const Text('ADD'),
         ),
       ],
     );

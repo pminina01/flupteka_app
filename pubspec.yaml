@@ -29,8 +29,8 @@ environment:
 dependencies:
   flutter_typeahead: ^3.2.3
   animated_background: ^2.0.0
-  algolia: ^0.1.6
-  http: ^0.12.0
+  algolia: ^1.1.1
+  http: ^0.13.0
   json_annotation: ^4.4.0
   url_launcher: ^6.0.0
   flutter:
@@ -51,6 +51,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.4
+  mockito: ^5.1.0
+  build_runner: ^2.1.10
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

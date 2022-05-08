@@ -65,7 +65,7 @@ class Contacts extends StatelessWidget {
         style: const TextStyle(
             color: Color(0x8A000000), fontSize: 22, letterSpacing: 6),
       ),
-      onTap: () => launch('https://t.me/$alias'),
+      onTap: () => launchUrl(Uri.parse('https://t.me/$alias')),
     );
   }
 }
