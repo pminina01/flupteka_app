@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'aid-kit/aid_kit_page.dart';
-import 'aid-kit/add_medicine_page.dart';
+import 'aid-kit/aid-kit-page.dart';
+import 'aid-kit/add-medicine-page.dart';
 import './contacts.dart';
-import 'navigation.dart' as navigation;
-import './menu.dart';
+import 'navigation.dart' as Navigation;
 
 void main() {
   runApp(const MyApp());
@@ -17,21 +16,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: true,
-          //leading: IconButton(icon:Icon(Icons.arrow_back),
-          //onPressed:() => Navigator.pop(context, false),
-          //),
-          elevation: 0.0,
-          iconTheme: const IconThemeData(
-            color: Colors.black, //change your color here
-            size: 30,
-          ),
-        ),
-        body: const Contacts(),
-        drawer: const HamburgerMenu(),
-      ),
+      home: const Contacts(),
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     automaticallyImplyLeading: true,
+      //     //leading: IconButton(icon:Icon(Icons.arrow_back),
+      //     //onPressed:() => Navigator.pop(context, false),
+      //     //),
+      //     elevation: 0.0,
+      //     iconTheme: const IconThemeData(
+      //       color: Colors.black, //change your color here
+      //       size: 30,
+      //     ),
+      //   ),
+      //   body: const Contacts(),
+      //   drawer: const HamburgerMenu(),
+      // ),
       theme: ThemeData(
         primaryColor: const Color(0xFFC5DADA),
         backgroundColor: const Color(0xFFC5DADA),
@@ -58,18 +58,18 @@ class MyApp extends StatelessWidget {
         );
       }),
       onGenerateRoute: (settings) {
-        if (settings.name == navigation.aidKit) {
+        if (settings.name == Navigation.AID_KIT) {
           return MaterialPageRoute(
             builder: (context) => const AidKitPage(),
           );
         }
-        if (settings.name == navigation.addMedicine) {
+        if (settings.name == Navigation.ADD_MEDICINE) {
           return MaterialPageRoute(
             builder: (context) => const AddMedicinePage(),
           );
         }
-        if (settings.name == navigation.contacts) {
-          return MaterialPageRoute(builder: (context) => const Contacts());
+        if (settings.name == Navigation.CONTACTS) {
+          return MaterialPageRoute(builder: (context) => Contacts());
         }
         return null;
       },
@@ -96,6 +96,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -118,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {Navigator.pushNamed(context, navigation.aidKit)},
+        onPressed: () => {Navigator.pushNamed(context, Navigation.AID_KIT)},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

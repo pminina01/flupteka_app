@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './medicament.dart';
-import '../navigation.dart' as navigation;
+import '../navigation.dart' as Navigation;
 
 class AidKitPage extends StatefulWidget {
   const AidKitPage({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class _AidKitPageState extends State<AidKitPage> {
         onPressed: () => {
           Navigator.pushNamed(
             context,
-            navigation.addMedicine,
+            Navigation.ADD_MEDICINE,
           )
         },
         tooltip: 'Add medicine',
