@@ -11,7 +11,7 @@ class Contacts extends StatelessWidget {
     return Scaffold(
       appBar: const Header(
         hasMenu: true,
-        title: "Contacts",
+        title: 'Contacts',
       ),
       body: Center(
         child: Align(
