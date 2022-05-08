@@ -9,7 +9,7 @@ void main() {
     final widget = wrapWidget(const Contacts());
     await tester.pumpWidget(widget);
 
-    expect(find.textContaining("Anatoliy"), findsWidgets);
+    expect(find.textContaining('Anatoliy'), findsWidgets);
   });
 }
 

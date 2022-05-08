@@ -9,7 +9,7 @@ class AddMedicinePage extends StatelessWidget {
     return Scaffold(
       appBar: const Header(
         hasMenu: false,
-        title: "Add medicine",
+        title: 'Add medicine',
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
@@ -17,9 +17,9 @@ class AddMedicinePage extends StatelessWidget {
           children: [
             Row(mainAxisSize: MainAxisSize.min, children: [
               const Text(
-                "Name",
+                'Name',
                 style: TextStyle(
-                  fontFamily: "Poppins",
+                  fontFamily: 'Poppins',
                   fontSize: 30,
                 ),
               ),
@@ -38,9 +38,9 @@ class AddMedicinePage extends StatelessWidget {
             ]),
             Row(mainAxisSize: MainAxisSize.min, children: [
               const Text(
-                "Count",
+                'Count',
                 style: TextStyle(
-                  fontFamily: "Poppins",
+                  fontFamily: 'Poppins',
                   fontSize: 30,
                 ),
               ),
@@ -49,8 +49,8 @@ class AddMedicinePage extends StatelessWidget {
                 child: const Icon(Icons.remove),
               ),
               const Text(
-                "20",
-                style: TextStyle(fontFamily: "Poppins", fontSize: 35),
+                '20',
+                style: TextStyle(fontFamily: 'Poppins', fontSize: 35),
               ),
               TextButton(
                 onPressed: () => {},
@@ -59,9 +59,9 @@ class AddMedicinePage extends StatelessWidget {
             ]),
             Row(mainAxisSize: MainAxisSize.min, children: [
               const Text(
-                "Due",
+                'Due',
                 style: TextStyle(
-                  fontFamily: "Poppins",
+                  fontFamily: 'Poppins',
                   fontSize: 30,
                 ),
               ),

@@ -21,6 +21,8 @@ about the time of taking the pills and running out medicines.
 
 ● clickable links to creator's telegram
 
+● notifications
+
 # Description of each page
 
 **Contacts Page (Main Page now):**

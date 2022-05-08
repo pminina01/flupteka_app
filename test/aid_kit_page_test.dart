@@ -10,14 +10,14 @@ import 'aid_kit_page_test.mocks.dart';
 
 @GenerateMocks([Storage])
 void main() {
-  testWidgets("Change medicament values", (WidgetTester tester) async {
+  testWidgets('Change medicament values', (WidgetTester tester) async {
     final widget = wrapWidget(const AidKitPage());
     await tester.pumpWidget(widget);
 
     const hardcodedValue = 5;
 
     var storage = MockStorage();
-    when(storage.loadNames()).thenReturn(["Otezla", "Aspirin", "Analgin"]);
+    when(storage.loadNames()).thenReturn(['Otezla', 'Aspirin', 'Analgin']);
     when(storage.loadQuantities()).thenReturn([hardcodedValue, 50, 22]);
 
     final finder = find.byIcon(Icons.add);

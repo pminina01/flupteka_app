@@ -16,7 +16,7 @@ Directionality wrapWidget(Widget w) {
 
 void main() {
   testWidgets('Medicament shows name and amount', (WidgetTester tester) async {
-    final widget = wrapWidget(const Medicament(name: "Lekarstvo", count: 20));
+    final widget = wrapWidget(const Medicament(name: 'Lekarstvo', count: 20));
     await tester.pumpWidget(widget);
 
     expect(find.text('Lekarstvo'), findsOneWidget);
@@ -27,7 +27,7 @@ void main() {
   testWidgets('Medicament callbacks work', (WidgetTester tester) async {
     var check = false;
 
-    final widget = wrapWidget(Medicament(name: "Lekarstvo", count: 20, onAdd: () => {check = true}));
+    final widget = wrapWidget(Medicament(name: 'Lekarstvo', count: 20, onAdd: () => {check = true}));
     await tester.pumpWidget(widget);
 
     await tester.tap(find.byIcon(Icons.add));
