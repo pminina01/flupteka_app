@@ -2,7 +2,7 @@ import 'package:algolia/algolia.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flupteka_app/header.dart';
-import 'package:flutter_typeahead/flutter_typeahead.dart';
+//import 'package:flutter_typeahead/flutter_typeahead.dart';
 import '../algolia_application.dart';
 
 class AddMedicinePage extends StatefulWidget {
@@ -14,7 +14,7 @@ class AddMedicinePage extends StatefulWidget {
 
 class _AddMedicinePage extends State<AddMedicinePage> {
   int _count = 0;
-  late DateTime _dateTime;
+  //late DateTime _dateTime;
   final TextEditingController _searchText = TextEditingController(text: '');
   List<AlgoliaObjectSnapshot> _results = [];
   bool _searching = false;
@@ -24,12 +24,10 @@ class _AddMedicinePage extends State<AddMedicinePage> {
     setState(() {
       _searching = true;
     });
-
     AlgoliaQuery query =
-        _algoliaApp.instance.index('Posts').search(_searchText.text);
+        _algoliaApp.instance.index('medicine').query(_searchText.text);
     AlgoliaQuerySnapshot querySnap = await query.getObjects();
     _results = querySnap.hits;
-
     setState(() {
       _searching = false;
     });
