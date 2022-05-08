@@ -18,7 +18,7 @@ class Medicament extends StatelessWidget {
   Widget build(BuildContext context) {
     // Medicament counts should all be centerred
     final countWidth = _textSize(
-            "$count", const TextStyle(fontFamily: "Poppins", fontSize: 35))
+            '$count', const TextStyle(fontFamily: 'Poppins', fontSize: 35))
         .width;
     // To shift the count's center, change the value of defaultPadding:
     // decrease to the left, increase to the right
@@ -31,7 +31,7 @@ class Medicament extends StatelessWidget {
         children: [
           Text(
             name,
-            style: const TextStyle(fontFamily: "Poppins", fontSize: 35),
+            style: const TextStyle(fontFamily: 'Poppins', fontSize: 35),
           ),
           Row(
             children: [
@@ -40,8 +40,8 @@ class Medicament extends StatelessWidget {
                 child: const Icon(Icons.remove),
               ),
               Text(
-                "$count",
-                style: const TextStyle(fontFamily: "Poppins", fontSize: 35),
+                '$count',
+                style: const TextStyle(fontFamily: 'Poppins', fontSize: 35),
               ),
               TextButton(
                 onPressed: onAdd,
