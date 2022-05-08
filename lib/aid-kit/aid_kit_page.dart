@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './medicament.dart';
 import '../navigation.dart' as navigation;
 import 'package:flupteka_app/header.dart';
+import '../menu.dart';
 
 class AidKitPage extends StatefulWidget {
   const AidKitPage({Key? key}) : super(key: key);
@@ -28,21 +29,21 @@ class _AidKitPageState extends State<AidKitPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Header(
-        hasMenu: false,
+        hasMenu: true,
         title: 'List of medicine',
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Color(0xFF55AA96)),
+            style: ElevatedButton.styleFrom(primary: const Color(0xFF55AA96)),
             onPressed: () => {
               Navigator.pushNamed(
                 context,
                 navigation.addMedicine,
               )
             },
-            child: Text('ADD NEW'),
+            child: const Text('ADD NEW'),
           ),
           Expanded(
             child: ListView(
@@ -61,6 +62,7 @@ class _AidKitPageState extends State<AidKitPage> {
           ),
         ],
       ),
+      drawer: const HamburgerMenu(),
     );
   }
 }
