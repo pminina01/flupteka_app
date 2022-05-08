@@ -1,5 +1,4 @@
 import 'package:algolia/algolia.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flupteka_app/header.dart';
 //import 'package:flutter_typeahead/flutter_typeahead.dart';
@@ -16,7 +15,9 @@ class _AddMedicinePage extends State<AddMedicinePage> {
   int _count = 0;
   //late DateTime _dateTime;
   final TextEditingController _searchText = TextEditingController(text: '');
+  // ignore: unused_field
   List<AlgoliaObjectSnapshot> _results = [];
+  // ignore: unused_field
   bool _searching = false;
   final Algolia _algoliaApp = AlgoliaApplication.algolia;
 
@@ -119,7 +120,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         //     print(suggestion);
         //   },
         // ),
-        Spacer(),
+        const Spacer(),
         SizedBox(
           width: 200,
           height: 60,
@@ -146,7 +147,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
   Widget _contentCount() {
     return Row(mainAxisSize: MainAxisSize.min, children: [
       const Text('Count'),
-      Spacer(),
+      const Spacer(),
       Row(children: [
         TextButton(
           onPressed: () => setState(() => _count==0 ? 0 : _count -= 1),
@@ -164,7 +165,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
   Widget _contentDue() {
     return Row(mainAxisAlignment: MainAxisAlignment.end, children: [
       const Text('Due'),
-      Spacer(),
+      const Spacer(),
       TextField(
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
