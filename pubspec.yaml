@@ -27,10 +27,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_typeahead: ^3.2.3
   animated_background: ^2.0.0
-  http: ^0.13.4
+  algolia: ^1.1.1
+  http: ^0.13.0
   json_annotation: ^4.4.0
-  dio: ^4.0.4
   url_launcher: ^6.0.0
   flutter:
     sdk: flutter
