@@ -10,8 +10,13 @@ class Notifics extends StatefulWidget {
 }
 
 class _State extends State<Notifics> {
-  final List<String> tablets = <String>['Aspirin'];
-  final List<String> times = <String>['15:00'];
+  final List<String> tablets = <String>[
+    'Aspirin',
+    'Paracetamol',
+    "Magnesium",
+    "Magnesium"
+  ];
+  final List<String> times = <String>['15:00', '20:00', '21:00', '22:00'];
   TextEditingController tabletController = TextEditingController();
   TextEditingController timeController = TextEditingController();
 
@@ -52,7 +57,7 @@ class _State extends State<Notifics> {
                   controller: timeController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Time',
+                    labelText: 'Time in format HH:MM',
                   ),
                 ),
               ),
@@ -65,12 +70,13 @@ class _State extends State<Notifics> {
                   addItemToList();
                 },
               ),
-              ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: tablets.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return _notify(tablets[index], times[index]);
-                  })
+              Expanded(
+                  child: ListView.builder(
+                      padding: const EdgeInsets.all(8),
+                      itemCount: tablets.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return _notify(times[index], tablets[index]);
+                      }))
             ]),
           ),
         ),
