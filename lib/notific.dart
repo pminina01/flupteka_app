@@ -4,8 +4,24 @@ import 'header.dart';
 import './menu.dart';
 // import './assets/images/clock.png';
 
-class Notifics extends StatelessWidget {
-  const Notifics({Key? key}) : super(key: key);
+class Notifics extends StatefulWidget {
+  @override
+  _State createState() => _State();
+}
+
+class _State extends State<Notifics> {
+  final List<String> tablets = <String>['Aspirin'];
+  final List<String> times = <String>['15:00'];
+  TextEditingController tabletController = TextEditingController();
+  TextEditingController timeController = TextEditingController();
+
+  void addItemToList() {
+    setState(() {
+      tablets.insert(0, tabletController.text);
+      times.insert(0, timeController.text);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,24 +34,50 @@ class Notifics extends StatelessWidget {
           alignment: Alignment.center,
           child: Padding(
             padding: const EdgeInsets.all(20),
-            child: _listOfContent(),
+            child: Column(children: [
+              Container(
+                child: TextField(
+                  controller: tabletController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Tablet name',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                child: TextField(
+                  controller: timeController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Time',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              RaisedButton(
+                child: Text('+'),
+                onPressed: () {
+                  addItemToList();
+                },
+              ),
+              ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: tablets.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return _notify(tablets[index], times[index]);
+                  })
+            ]),
           ),
         ),
       ),
       drawer: const HamburgerMenu(),
     );
   }
-}
-
-Widget _listOfContent() {
-  return ListView(
-    children: [
-      _notify('15:00', 'Aspirin'),
-      _notify('20:00', 'Paracetamol'),
-      _notify('21:00', 'Magnesium'),
-      _notify('22:00', 'Magnesium'),
-    ],
-  );
 }
 
 Widget _notify(time, name) {
