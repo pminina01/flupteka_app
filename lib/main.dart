@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'aid-kit/aid-kit-page.dart';
-import 'aid-kit/add-medicine-page.dart';
+import 'aid-kit/aid_kit_page.dart';
+import 'aid-kit/add_medicine_page.dart';
 import './contacts.dart';
-import 'navigation.dart' as Navigation;
+import 'navigation.dart' as navigation;
 
 void main() {
   runApp(const MyApp());
@@ -58,18 +58,18 @@ class MyApp extends StatelessWidget {
         );
       }),
       onGenerateRoute: (settings) {
-        if (settings.name == Navigation.AID_KIT) {
+        if (settings.name == navigation.aidKit) {
           return MaterialPageRoute(
             builder: (context) => const AidKitPage(),
           );
         }
-        if (settings.name == Navigation.ADD_MEDICINE) {
+        if (settings.name == navigation.addMedicine) {
           return MaterialPageRoute(
             builder: (context) => const AddMedicinePage(),
           );
         }
-        if (settings.name == Navigation.CONTACTS) {
-          return MaterialPageRoute(builder: (context) => Contacts());
+        if (settings.name == navigation.contacts) {
+          return MaterialPageRoute(builder: (context) => const Contacts());
         }
         return null;
       },
@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {Navigator.pushNamed(context, Navigation.AID_KIT)},
+        onPressed: () => {Navigator.pushNamed(context, navigation.aidKit)},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

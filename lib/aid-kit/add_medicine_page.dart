@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../navigation.dart' as Navigation;
 import 'package:flupteka_app/header.dart';
 
 class AddMedicinePage extends StatelessWidget {
