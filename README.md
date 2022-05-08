@@ -49,18 +49,16 @@ about the time of taking the pills and running out medicines.
 User searches through the list of medicine to add to his/her first aid kit or manually adds if it is not found. It is possible to monitor the availability of medicine, to add an expiration date, edit the description of a remedy, add the number of remaining amounts. Medicine product as well can be deleted. After deletion or taking medication the remaining amount accordingly changes. App also serves as a notification for taking pills or in case the particular product runs out or expires. 
 
 # Screenshots
-![IMAGE 2022-03-24 22:02:52](https://user-images.githubusercontent.com/64332054/160009728-9581e296-0890-46fd-a4a9-9a9d0678dd09.jpg)  
 
-![IMAGE 2022-03-24 22:03:00](https://user-images.githubusercontent.com/64332054/160009749-a5160f69-14c8-4868-8c7d-361481cf333f.jpg)  
+<img width="586" alt="notifications" src="https://user-images.githubusercontent.com/99041432/167315542-ddc4f342-b794-4600-b732-8992dc01d5e8.png">
 
-![IMAGE 2022-03-24 22:03:06](https://user-images.githubusercontent.com/64332054/160009766-2ee4de85-e139-4db5-a629-93fe2e0c21ee.jpg)  
+![add](https://user-images.githubusercontent.com/99041432/167315546-46390ddc-8b39-4748-abba-7b09956c74de.jpg)
 
-![IMAGE 2022-03-24 22:03:12](https://user-images.githubusercontent.com/64332054/160009781-f254b729-481b-416b-ae2c-4e51023f8534.jpg). 
+![бургер](https://user-images.githubusercontent.com/99041432/167315584-b52f8c5b-b84d-4863-8482-3e3a680e5ffe.jpg)
 
+![контакты](https://user-images.githubusercontent.com/99041432/167315588-4d1d58db-f5af-474c-a299-43ef003775b9.jpg)
 
-
-
-
+![медицина](https://user-images.githubusercontent.com/99041432/167315589-71eb3d1e-dad0-43f8-8912-4a0ac903b330.jpg)
 
 # Demo apk
 [link to drive](https://drive.google.com/drive/folders/1xNWCPzSa4Z0Tvn1KaQKLXORoPnKIftFV?usp=sharing)
