@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header.dart';
 import './menu.dart';
-// import './assets/images/clock.png';
 
 class Notifics extends StatefulWidget {
   const Notifics({Key? key}) : super(key: key);
@@ -98,21 +97,10 @@ Widget _contentrow(time, name) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       SizedBox(
-          width: 150,
-          child: Row(children: [
-            Positioned.fill(
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      'lib/assets/images/clock.png',
-                      fit: BoxFit.cover,
-                      height: 25,
-                      width: 25,
-                    ))),
-            const SizedBox(width: 3),
-            Text(time),
-          ])),
-      Expanded(child: SizedBox(width: 300, child: Text(name))),
+        width: 150,
+        child: Text(time),
+      ),
+      Expanded(child: Text(name)),
     ],
   );
 }
