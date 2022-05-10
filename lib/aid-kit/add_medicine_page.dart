@@ -84,7 +84,6 @@ class _AddMedicinePage extends State<AddMedicinePage> {
           animationStart: 0,
           animationDuration: Duration.zero,
           textFieldConfiguration: TextFieldConfiguration(
-              autofocus: true,
               decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.search),
