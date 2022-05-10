@@ -63,9 +63,15 @@ class Contacts extends StatelessWidget {
       child: Text(
         '@$alias',
         style: const TextStyle(
-            color: Color(0x8A000000), fontSize: 22, letterSpacing: 6),
+            color: Color(0x8A000000), fontSize: 22, letterSpacing: 6,
+            decoration: TextDecoration.underline),
       ),
-      onTap: () => launch('https://t.me/$alias'),
+      onTap: () => _launch(Uri.parse('https://t.me/$alias')),
     );
+  }
+}
+Future<void> _launch(Uri url) async {
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
   }
 }
