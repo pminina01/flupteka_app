@@ -30,21 +30,30 @@ class _AidKitPageState extends State<AidKitPage> {
     return Scaffold(
       appBar: const Header(
         hasMenu: true,
-        title: 'List of medicine',
+        title: 'MEDICAMENTS',
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: const Color(0xFF55AA96)),
-            onPressed: () => {
-              Navigator.pushNamed(
-                context,
-                navigation.addMedicine,
-              )
-            },
-            child: const Text('ADD NEW'),
-          ),
+          Container(
+              margin: EdgeInsets.all(15),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFF55AA96)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)))),
+                onPressed: () => {
+                  Navigator.pushNamed(
+                    context,
+                    navigation.addMedicine,
+                  )
+                },
+                child: const Text('ADD NEW'),
+              )),
           Expanded(
             child: ListView(
               children: _medicineNames.asMap().entries.map((entry) {
@@ -55,7 +64,9 @@ class _AidKitPageState extends State<AidKitPage> {
                   name: name,
                   count: _medicineQuantities[ind],
                   onAdd: () => setState(() => _medicineQuantities[ind] += 1),
-                  onRemove: () => setState(() => _medicineQuantities[ind]==0 ? 0: _medicineQuantities[ind] -= 1),
+                  onRemove: () => setState(() => _medicineQuantities[ind] == 0
+                      ? 0
+                      : _medicineQuantities[ind] -= 1),
                 );
               }).toList(),
             ),

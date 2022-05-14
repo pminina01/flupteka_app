@@ -10,21 +10,17 @@ class Notifics extends StatefulWidget {
 }
 
 class _State extends State<Notifics> {
-  final List<String> tablets = <String>[
-    'Aspirin',
-    'Paracetamol',
-    'Magnesium',
-    'Magnesium'
-  ];
-  final List<String> times = <String>['15:00', '20:00', '21:00', '22:00'];
+  final List<String> tablets = [];
+  final List<String> times = [];
   TextEditingController tabletController = TextEditingController();
   TextEditingController timeController = TextEditingController();
 
   void addItemToList() {
+    if (tabletController.text!='' && timeController.text!='' ){
     setState(() {
       tablets.insert(0, tabletController.text);
       times.insert(0, timeController.text);
-    });
+    });}
   }
 
   @override
@@ -32,7 +28,7 @@ class _State extends State<Notifics> {
     return Scaffold(
       appBar: const Header(
         hasMenu: true,
-        title: 'Notifications',
+        title: 'NOTIFICATIONS',
       ),
       body: Center(
         child: Align(
@@ -40,16 +36,6 @@ class _State extends State<Notifics> {
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(children: [
-              TextField(
-                controller: tabletController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Tablet name',
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
               TextField(
                 controller: timeController,
                 decoration: const InputDecoration(
@@ -60,15 +46,33 @@ class _State extends State<Notifics> {
               const SizedBox(
                 height: 20,
               ),
+              TextField(
+                controller: tabletController,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Tablet name',
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(margin:EdgeInsets.all(15),child:
               ElevatedButton(
-                child: const Text('+'),
+                child: const Text('ADD'),
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.all(15)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFF55AA96)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)))),
                 onPressed: () {
                   addItemToList();
                 },
-              ),
+              ),),
               Expanded(
                   child: ListView.builder(
-                      padding: const EdgeInsets.all(8),
                       itemCount: tablets.length,
                       itemBuilder: (BuildContext context, int index) {
                         return _notify(times[index], tablets[index]);
@@ -94,10 +98,9 @@ Widget _notify(time, name) {
 
 Widget _contentrow(time, name) {
   return Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       SizedBox(
-        width: 150,
+        width: 120,
         child: Text(time),
       ),
       Expanded(child: Text(name)),

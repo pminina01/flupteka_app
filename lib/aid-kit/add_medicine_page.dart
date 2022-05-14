@@ -21,7 +21,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
     return Scaffold(
       appBar: const Header(
         hasMenu: false,
-        title: 'Add medicine',
+        title: 'ADD MEDICINE',
       ),
       body: Center(
         child: Align(
@@ -42,11 +42,19 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         _row('name'),
         _row('count'),
         _row('due'),
+        Container(margin: EdgeInsets.all(100),child:
         ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: const Color(0xFF55AA96)),
+          style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsets>(
+                  EdgeInsets.all(15)),
+              backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color(0xFF55AA96)),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0)))),
           onPressed: () {},
-          child: const Text('ADD'),
-        ),
+          child: const Text('ADD TO LIST'),
+        )),
       ],
     );
   }
@@ -78,7 +86,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         const Text('Name'),
         const Spacer(),
         SizedBox(
-        width: 190,
+        width: 180,
         child:
         TypeAheadField(
           animationStart: 0,
@@ -87,6 +95,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
               decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.search),
+                hintText: 'Enter Name',
               ),
             controller: _searchText,
           ),
@@ -136,7 +145,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
           hintText: 'Enter Date',
-          constraints: BoxConstraints(maxWidth: 200, maxHeight: 60),
+          constraints: BoxConstraints(maxWidth: 180, maxHeight: 60),
         ),
         onSubmitted: (value) {},
       ),

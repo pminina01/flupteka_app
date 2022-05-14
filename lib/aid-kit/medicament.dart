@@ -17,9 +17,7 @@ class Medicament extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Medicament counts should all be centerred
-    final countWidth = _textSize(
-            '$count', const TextStyle(fontFamily: 'Poppins', fontSize: 35))
-        .width;
+    final countWidth = _textSize('$count').width;
     // To shift the count's center, change the value of defaultPadding:
     // decrease to the left, increase to the right
     const double defaultPadding = 40;
@@ -27,12 +25,12 @@ class Medicament extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.fromLTRB(30, 30, defaultPadding - countWidth / 2, 30),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            name,
-            style: const TextStyle(fontFamily: 'Poppins', fontSize: 35),
+          SizedBox(
+            width: 130,
+            child: Text(name),
           ),
+      SizedBox(width: 20,),
           Row(
             children: [
               TextButton(
@@ -41,7 +39,6 @@ class Medicament extends StatelessWidget {
               ),
               Text(
                 '$count',
-                style: const TextStyle(fontFamily: 'Poppins', fontSize: 35),
               ),
               TextButton(
                 onPressed: onAdd,
@@ -55,9 +52,9 @@ class Medicament extends StatelessWidget {
   }
 
   // https://stackoverflow.com/questions/52659759/how-can-i-get-the-size-of-the-text-widget-in-flutter
-  Size _textSize(String text, TextStyle style) {
+  Size _textSize(String text) {
     final TextPainter textPainter = TextPainter(
-        text: TextSpan(text: text, style: style),
+        text: TextSpan(text: text),
         maxLines: 1,
         textDirection: TextDirection.ltr)
       ..layout(minWidth: 0, maxWidth: double.infinity);
