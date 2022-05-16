@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.normal,
           ),
           bodyText2: TextStyle(
-            fontSize: 28,
+            fontSize: 25,
             letterSpacing: 6,
             fontWeight: FontWeight.normal,
           ),
@@ -79,6 +79,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

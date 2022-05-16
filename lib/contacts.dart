@@ -11,7 +11,7 @@ class Contacts extends StatelessWidget {
     return Scaffold(
       appBar: const Header(
         hasMenu: true,
-        title: 'Contacts',
+        title: 'CONTACTS',
       ),
       body: Center(
         child: Align(
@@ -39,9 +39,12 @@ class Contacts extends StatelessWidget {
 
   Widget _rowOfContent(name, alias) {
     return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: const BoxDecoration(
-        border: Border(top: BorderSide(color: Colors.white)),
+      margin: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+
+        color: const Color(0xFF55AA96).withOpacity(0.5)
+
       ),
       child: _content(name, alias),
     );
@@ -61,11 +64,16 @@ class Contacts extends StatelessWidget {
   Widget _hyperLink(alias) {
     return InkWell(
       child: Text(
-        '@$alias',
+        'tg: @$alias',
         style: const TextStyle(
-            color: Color(0x8A000000), fontSize: 22, letterSpacing: 6),
+            color: Color(0x8A000000), fontSize: 22, letterSpacing: 3),
       ),
-      onTap: () => launchUrl(Uri.parse('https://t.me/$alias')),
+      onTap: () => _launch(Uri.parse('https://t.me/$alias')),
     );
+  }
+}
+Future<void> _launch(Uri url) async {
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
   }
 }
