@@ -56,12 +56,12 @@ class _State extends State<Notifics> {
               const SizedBox(
                 height: 20,
               ),
-              Container(margin:EdgeInsets.all(15),child:
+              Container(margin:const EdgeInsets.all(15),child:
               ElevatedButton(
                 child: const Text('ADD'),
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(15)),
+                        const EdgeInsets.all(15)),
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color(0xFF55AA96)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(

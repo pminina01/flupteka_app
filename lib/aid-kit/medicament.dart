@@ -30,7 +30,7 @@ class Medicament extends StatelessWidget {
             width: 130,
             child: Text(name),
           ),
-      SizedBox(width: 20,),
+      const SizedBox(width: 20,),
           Row(
             children: [
               TextButton(

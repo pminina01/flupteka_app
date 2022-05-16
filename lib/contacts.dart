@@ -43,7 +43,7 @@ class Contacts extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
 
-        color: Color(0xFF55AA96).withOpacity(0.5)
+        color: const Color(0xFF55AA96).withOpacity(0.5)
 
       ),
       child: _content(name, alias),

@@ -36,11 +36,11 @@ class _AidKitPageState extends State<AidKitPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-              margin: EdgeInsets.all(15),
+              margin: const EdgeInsets.all(15),
               child: ElevatedButton(
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.all(15)),
+                        const EdgeInsets.all(15)),
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color(0xFF55AA96)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
