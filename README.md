@@ -50,9 +50,7 @@ User searches through the list of medicine to add to his/her first aid kit or ma
 
 # Screenshots
 
-<img width="586" alt="notifications" src="https://user-images.githubusercontent.com/99041432/167315542-ddc4f342-b794-4600-b732-8992dc01d5e8.png">
-
-![add](https://user-images.githubusercontent.com/99041432/167315546-46390ddc-8b39-4748-abba-7b09956c74de.jpg)
+<img width="586" alt="notifications" src="https://user-images.githubusercontent.com/99041432/167315542-ddc4f342-b794-4600-b732-8992dc01d5e8.png"> | ![add](https://user-images.githubusercontent.com/99041432/167315546-46390ddc-8b39-4748-abba-7b09956c74de.jpg)
 
 ![бургер](https://user-images.githubusercontent.com/99041432/167315584-b52f8c5b-b84d-4863-8482-3e3a680e5ffe.jpg)
 
