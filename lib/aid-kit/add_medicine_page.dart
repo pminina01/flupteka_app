@@ -42,7 +42,7 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         _row('name'),
         _row('count'),
         _row('due'),
-        Container(margin: EdgeInsets.all(100),child:
+        Container(margin: EdgeInsets.all(20),child:
         ElevatedButton(
           style: ButtonStyle(
               padding: MaterialStateProperty.all<EdgeInsets>(
@@ -89,8 +89,8 @@ class _AddMedicinePage extends State<AddMedicinePage> {
         width: 180,
         child:
         TypeAheadField(
-          animationStart: 0,
-          animationDuration: Duration.zero,
+          //animationStart: 0,
+          //animationDuration: Duration.zero,
           textFieldConfiguration: TextFieldConfiguration(
               decoration: const InputDecoration(
                   border: OutlineInputBorder(),

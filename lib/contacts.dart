@@ -42,11 +42,7 @@ class Contacts extends StatelessWidget {
       margin: const EdgeInsets.all(5.0),
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-          border: Border.all(
-            color: Color(0xFF55AA96),
-            width: 2
-          ),
+
         color: Color(0xFF55AA96).withOpacity(0.5)
 
       ),
