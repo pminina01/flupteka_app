@@ -50,13 +50,11 @@ User searches through the list of medicine to add to his/her first aid kit or ma
 
 # Screenshots
 
-<img width="400" alt="main medicine page" src="https://user-images.githubusercontent.com/35624330/168618143-8d6ebff2-ec83-4a8b-afd8-12dc8a6856d4.png"> | ![add](https://user-images.githubusercontent.com/99041432/167315546-46390ddc-8b39-4748-abba-7b09956c74de.jpg)
+<img width="250" alt="main medicine page" src="https://user-images.githubusercontent.com/35624330/168618143-8d6ebff2-ec83-4a8b-afd8-12dc8a6856d4.png"> <img width="250" alt="searching" src="https://user-images.githubusercontent.com/35624330/168619326-e4ea102c-c097-439f-b44b-c080b5414d3f.png">
 
-![бургер](https://user-images.githubusercontent.com/99041432/167315584-b52f8c5b-b84d-4863-8482-3e3a680e5ffe.jpg)
+<img width="250" alt="add medicine page" src="https://user-images.githubusercontent.com/35624330/168618543-0c3e873a-b201-4e8c-bc13-f1f2d762d28c.png"> <img width="250" alt="natifications page" src="https://user-images.githubusercontent.com/35624330/168618905-3338b7d5-06c2-4a6e-b021-2f9989100da6.png"> 
 
-![контакты](https://user-images.githubusercontent.com/99041432/167315588-4d1d58db-f5af-474c-a299-43ef003775b9.jpg)
-
-![медицина](https://user-images.githubusercontent.com/99041432/167315589-71eb3d1e-dad0-43f8-8912-4a0ac903b330.jpg)
+<img width="250" alt="contacts page" src="https://user-images.githubusercontent.com/35624330/168619157-697a7347-2ef6-40b4-977f-4146ae4aeea9.png"> <img width="250" alt="natifications page" src="https://user-images.githubusercontent.com/35624330/168619590-aa68f2b1-4776-4c01-88e3-3451b2959f6d.png">
 
 # Demo apk
 [link to drive](https://drive.google.com/drive/folders/1xNWCPzSa4Z0Tvn1KaQKLXORoPnKIftFV?usp=sharing)
